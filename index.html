@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Soteador de Amigo Secreto">
+    <meta property="og:description" content="Um sistema interativo de Sorteio e Amigo Secreto para festas e confraternizações.">
+    <meta property="og:image" content="assets/pre-visualizacao.png">
+    <meta property="og:url" content="https://luizadaso.github.io/Projeto-Challenge-Amigo-Secreto/">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Petit+Formal+Script&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+    <title>Sorteador de Amigo Secreto</title>
+</head>
+
+<body>
+    <main class="main-content">
+        <header class="header-banner">
+                <h1 class="main-title">Amigo Secreto</h1>
+                <img src="assets/casal amigos.png" class="img-casal" alt="Fundo Casal Amigos" width="90" height="auto">
+        </header>
+        
+        <section class="input-section">
+            <h2 class="section-title">Selecione o tipo do sorteio:</h2>
+
+            <div class="input-wrapper">
+                <button class="button-ativarAmigoSecretoEsorteador" onclick="selecionaAmigoSecreto()">Amigo Secreto</button>
+                <button class="button-ativarAmigoSecretoEsorteador" onclick="selecionaSorteador()">Sorteador</button>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="amigo" class="input-name" placeholder="Digite um nome">
+                <button class="button-add" onclick="adicionarAmigo()">Adicionar</button>
+            </div>
+            
+            <ul id="listaAmigos" class="listaDeAmigos" aria-labelledby="listaAmigos" role="list"></ul>
+
+            <div id="qrCodeDisplay" class="qr-code-display">
+                <div id="qrName" class="qr-name"></div>
+                <div class="qr-container">
+                    <div id="qrCode"></div>
+                    <div id="qrLink" class="qr-link"></div>
+                    <button id="prevButton" onclick="showPreviousQR()" style="display: none;">&#9664;</button>
+                    <button id="nextButton" onclick="showNextQR()" style="display: none;">&#9654;</button>
+                </div>
+            </div>
+            
+            <ul id="resultado" class="resultado-sorteio" aria-live="polite"></ul>
+
+            <div class="button-sortearAmigo">
+                <button class="button-sortear-amigo" onclick="sortearAmigo()" aria-label="Sortear amigo secreto">
+                    <img src="assets/play_circle_outline.png" alt="Ícone para sortear">Sortear amigo
+                </button>
+                <button class="button-reiniciar" onclick="reiniciarLista()">↻ Reiniciar</button>
+            </div>
+        </section>
+        <div class="rodape" style="width: 100%; text-align: center; margin-top: 2px; margin-bottom: 10px;">
+            <p>
+                <a href="https://github.com/luizadaso" target="_blank" rel="noopener noreferrer">Desenvolvido por: luizadaso</a>
+            </p>
+        </div>
+    </main>
+
+    <script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,410 @@
+:root {
+    --color-primary: #864bd4;
+    --color-secondary: #f7f4f8f6;
+    --color-tertiary: #cbace7;
+    --color-button: #4faf5c;
+    --color-button-hover: #8540d4;
+    --color-text: #ffffff;
+    --color-text-black: #000;
+    --color-white: #FFFFFF;
+    --color-disabled: #d3d3d3;
+}
+
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+body {
+    background: linear-gradient(to right, var(--color-primary), #990b6a); /* Gradiente de laranja */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    margin-top: 10px;
+    padding-bottom: 0px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    width: 90%; 
+    max-width: 800px;
+    flex-grow: 1;
+    padding: 0 20px;
+    margin-top: 0;
+    margin: auto;
+}
+
+/* Banner */
+.header-banner {
+    flex: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+    margin: 10px;
+}
+
+/* Seção de entrada */
+.input-section {
+    flex: 40%;
+    background-color: var(--color-secondary);
+    border: 1.5px solid #000;
+    border-radius: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    width: calc(100% - 80px);
+    margin-bottom: 10px;
+}
+
+/* Títulos */
+.main-title {
+    font-size: 52px;
+    font-family: 'Petit Formal Script', sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--color-white);
+    margin-right: 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-family: "Montserrat", serif;
+    font-size: 18px;
+    color: var(--color-primary);
+    text-align: center;
+    padding: 2px;
+    margin-top: 0px;
+}
+
+/* Contêineres de entrada e botão */
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.input-name {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    border: 1.9px solid #000;
+    border-radius: 30px 0 0 30px;
+    font-size: 16px;
+}
+
+/* Estilo dos nomes adicionados na lista */
+.listaDeAmigos li {
+    width: 100%;
+    display: flex; /* Flexbox para alinhar o texto e o ícone */
+    align-items: center; /* Centraliza verticalmente os itens */
+    justify-content: space-between; /* Espaco entre o texto e o ícone */
+    padding: 10px; /* Espaçamento interno */
+    margin: 10px 0; /* Espaçamento entre os itens */
+    cursor: default;
+    border: 1.5px solid var(--color-primary); /* Cor do contorno */
+    border-radius: 20px; /* Bordas arredondadas */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombreamento */
+    background-color: var(--color-secondary); /* Cor de fundo */
+    transition: box-shadow 0.3s; /* Transição suave para o sombreamento */
+}
+
+/* Efeito ao passar o mouse sobre os nomes da lista */
+.listaDeAmigos li:hover {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Sombreamento mais forte ao passar o mouse */
+}
+
+/* Estilo do ícone de remoção de nomes da lista */
+.listaDeAmigos li span {
+    margin-left: 5px; /* Espaçamento entre o texto e o ícone */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    color: #a71515; /* Cor do ícone de remoção */
+    font-weight: bold; /* Destaca o ícone */
+    font-size: 20px; /* Tamanho do ícone */
+}
+
+.button-sortearAmigo {
+    display: flex;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Estilos de entrada de texto */
+.input-title {
+    flex: 1;
+    padding: 5px;
+    font-size: 16px;
+    border: 2px solid #333;
+    border-right: none;
+    border-radius: 25px 0 0 25px;
+    font-family: "Montserrat", serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos de botão */
+button {
+    padding: 15px 25px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    border: 1.9px solid #000;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.button-ativarAmigoSecretoEsorteador {
+    background-color: var(--color-tertiary);
+    color: var(--color-text-black);
+    font-size: medium; 
+    padding: 10px;
+    margin-left: 5px;
+}
+
+.button-ativarAmigoSecretoEsorteador.active {
+    background-color: var(--color-primary); /* Cor quando ativo */
+    color: var(--color-white);
+}
+
+.button-add {
+    background-color: var(--color-button);
+    color: var(--color-text);
+    border-radius: 0 30px 30px 0;
+    font-size: medium;
+    padding: 19.5px;
+}
+
+.button-reiniciar {
+    background-color: var(--color-tertiary);
+    color: var(--color-text-black);
+    border-radius: 60px 60px;
+    font-size: 18px;
+    align-items: center;
+    padding: 12px;
+}
+
+.button-reiniciar:hover {
+    color: var(--color-text);
+    background-color: #aa1e80;
+}
+
+.button-add:hover {
+    background-color: #8540d4;
+}
+
+a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #d7beee;
+}
+
+/* Listas */
+ul {
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.resultado-sorteio {
+    width: 90%;
+    margin-top: 0;
+    color: var(--color-primary);
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding: 2px;
+}
+
+.button-sortear-amigo {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Adiciona esta linha para centralizar o texto horizontalmente */
+    width: 100%;
+    padding: 10px;
+    color: var(--color-white);
+    background-color: var(--color-button);
+    font-size: 20px;
+    margin: 10px;
+    text-align: center; /* Adiciona esta linha para garantir que o texto esteja centralizado */
+}
+
+.button-sortear-amigo img {
+    margin-right: 30px;
+}
+
+.button-sortear-amigo:hover {
+    background-color: var(--color-button-hover);
+}
+
+.button-sortear-amigo:disabled {
+    background-color: var(--color-disabled); /* Cor cinza para o botão desabilitado */
+    color: #333; /* Cor do texto para o botão desabilitado */
+    cursor: not-allowed; /* Cursor não permitido para o botão desabilitado */
+}
+
+.qr-name {
+    text-align: center; /* Centraliza verticalmente os itens */
+    font-family: "Montserrat", sans-serif;
+    padding: 10px; /* Espaçamento interno */
+    margin: 2px; /* Espaçamento entre os itens */
+    margin-bottom: 10px;
+    cursor: default;
+}
+
+.qr-code-display {
+    margin-top: 10px;
+    font-size: 24px;
+    padding: 2px;
+    text-align: center;
+}
+
+.qr-container {
+    display: block;               /* Ativa o modelo de layout flexível para o contêiner do QR code */
+    align-items: center;        /* Centraliza verticalmente os itens */
+    justify-content: center; 
+}
+
+.qr-container #qrCode {
+    margin-bottom: 25px;            /* Espaçamento entre o QR code e os botões */
+}
+
+.navigation-buttons {
+    display: block;
+    flex-direction: row;  
+   /* Organiza os botões em linha */
+}
+
+.navigation-buttons button {
+    font-size: 5px;
+    padding: 10px;         /* Espaçamento interno */
+    margin: 0 5px;             /* Espaçamento entre os botões */
+    cursor: pointer;
+}
+
+.navigation-buttons button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.qr-link {
+    margin-bottom: 30px;
+}
+
+.qr-link a {
+    color: var(--color-primary);
+    font-size: 25px;
+    border: 1.5px solid var(--color-primary); /* Cor do contorno */
+    border-radius: 20px; /* Bordas arredondadas */
+    padding: 10px;
+    margin: 10px;
+}
+
+.qr-link a:hover {
+    color: #990b8d
+}
+
+/* Media query para telas menores */
+@media (max-width: 600px) {
+
+    * {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    .header-banner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .main-title {
+        font-size: 300%;
+        margin: 0%;
+        padding: 0%;
+        margin-left: 50px;
+    }
+
+    .main-content {
+        width: 120%; 
+        padding: 0 5px;
+        align-items: center;
+        min-height: 75vh;
+        margin: 10px;
+    }
+
+    .img-casal {
+        width: 25%;
+        max-width: 150px;
+        padding: 15px;
+        margin-right: 50px;
+    }
+
+    .button-ativarAmigoSecretoEsorteador {
+        font-size: 90%; 
+    }
+
+    .button-add {
+        max-width: 200px;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+
+    ul {
+        width: 100%;
+        font-size: 115%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .button-sortear-amigo {
+        width: 115%;
+        padding: 3%;
+        margin-top: 0;
+    }
+    
+    .button-sortear-amigo img {
+        margin-right: 20px;
+    }
+
+    .button-reiniciar {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .section-title {
+        font-size: 95%;
+        margin-top: 2px;
+    }
+    .input-section {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .result-list {
+        font-size: 22px;
+        margin: 0;
+    }
+
+    .qr-link a {
+        align-items: center;
+        font-size: 60%;
+        padding: 10px;
+    }
+}
